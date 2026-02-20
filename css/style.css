@@ -34,6 +34,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* permite que itens quebrem linha em telas pequenas */
 }
 
 /* Nome do mozao (lado esquerdo) */
@@ -47,6 +48,7 @@ header {
   display: flex;
   align-items: center;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 .contact a {
@@ -92,6 +94,10 @@ header {
   padding: 12px 25px;
   text-decoration: none;
   border-radius: 5px;
+  display: inline-block;
+  max-width: 100%; /* evita extrapolar a largura do container */
+  box-sizing: border-box;
+  text-align: center;
 }
 
 /* ================= SOBRE ================= */
@@ -104,10 +110,12 @@ header {
   display: flex;
   align-items: center;
   gap: 30px;
+  flex-wrap: wrap; /* torna responsivo */
 }
 
 .foto-advogado {
   max-width: 200px;
+  width: 100%; /* ajusta em telas pequenas */
   border-radius: 10px;
 }
 
@@ -130,6 +138,8 @@ header {
   color: white;
   padding: 15px 25px;
   border-radius: 5px;
+  flex: 1 1 calc(50% - 20px); /* torna os itens flexíveis e responsivos */
+  text-align: center;
 }
 
 /* ================= DEPOIMENTOS ================= */
@@ -174,6 +184,8 @@ header {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* ================= FOOTER ================= */
@@ -189,4 +201,30 @@ footer .redes a {
   color: white;
   text-decoration: none;
   margin: 0 5px;
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .cta-btn {
+    width: 100%; /* botão ocupa 100% em telas pequenas */
+    padding: 12px;
+  }
+
+  .sobre-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .atuacao li {
+    flex: 1 1 100%;
+  }
 }
