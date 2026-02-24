@@ -29,21 +29,32 @@ header {
   padding: 15px 20px;
 }
 
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  align-items: center;
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* permite que elementos quebrem quando necessário */
-  gap: 10px;
+  flex-wrap: wrap;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Logo */
 .logo-text {
   font-weight: bold;
   font-size: 18px;
   white-space: nowrap;
-  flex-shrink: 0;
+  color: white;
 }
+
 
 /* Contatos */
 .contact {
@@ -218,6 +229,7 @@ footer .redes a {
   .logo-text {
     font-size: 16px;
     margin-bottom: 10px;
+    align-self: center;
   }
 
   .contact {
@@ -260,6 +272,7 @@ footer .redes a {
 @media (max-width: 480px) {
   .logo-text {
     font-size: 14px;
+    align-items: center;
   }
 
   .contact a {
